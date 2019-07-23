@@ -34,7 +34,7 @@ def read_paradox_file(file_path):
         text = splitted[1][2:]
         if len(splitted) > 2:
             for i in range(2, len(splitted)):
-                text += ':' + splitted[1]
+                text += ':' + splitted[i]
         start = text.find('"') + 1
         end = text.rfind('"')
         if start > end:
