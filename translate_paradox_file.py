@@ -6,6 +6,7 @@ from tqdm import tqdm
 def get_args():
     parser = argparse.ArgumentParser(description='Translate a yml Paradox file from English to French')
     parser.add_argument('basename', type=str, help='Path and basename of the file to translate')
+    parser.add_argument('api_key', type=str, help='Path of file with the DeepL API key')
     return parser.parse_args()
 
 
@@ -44,8 +45,8 @@ def read_paradox_file(file_path):
     return res
 
 
-def read_api_key():
-    with open('DeepL_key', 'r') as f:
+def read_api_key(path):
+    with open(path, 'r') as f:
         return f.readlines()[0].replace('\n', '')
 
 
@@ -63,9 +64,8 @@ def translate(text, api_key):
 
 
 if __name__ == '__main__':
-    api_key_deepL = read_api_key()
-
     args = get_args()
+    api_key_deepL = read_api_key(args.api_key)
     basename = args.basename
     source_file = basename + '_l_english.yml'
     dest_file = basename + '_l_french.yml'

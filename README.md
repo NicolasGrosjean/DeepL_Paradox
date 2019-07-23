@@ -46,7 +46,7 @@ To translate the file _D:\Documents\Commune_de_France_l_english.yml_ execute in 
 directory the command
 
 ```
-python translate_paradox_file.py "D:\Documents\Commune_de_France"
+python translate_paradox_file.py "D:\Documents\Commune_de_France" DeepL_key
 ```
 
 ## License
