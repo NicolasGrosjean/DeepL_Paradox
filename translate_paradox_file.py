@@ -74,7 +74,7 @@ if __name__ == '__main__':
         f.write('l_french:\n\n')
         for line in tqdm(l):
             paragraphs = line['text'].split('\\n')
-            translated_line = paragraphs[0]
+            translated_line = translate(paragraphs[0], api_key_deepL)
             if len(paragraphs) > 1:
                 for paragraph in paragraphs[1:]:
                     translated_line += '\\n'
