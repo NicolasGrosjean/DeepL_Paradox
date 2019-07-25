@@ -74,10 +74,10 @@ if __name__ == '__main__':
         f.write('l_french:\n\n')
         for line in tqdm(l):
             paragraphs = line['text'].split('\\n')
-            translated_line = translate(paragraphs[0], api_key_deepL)
+            translated_line = translate(paragraphs[0], api_key_deepL).replace('"', r'\"')
             if len(paragraphs) > 1:
                 for paragraph in paragraphs[1:]:
                     translated_line += '\\n'
                     if len(paragraph) > 0:
-                        translated_line += translate(paragraph, api_key_deepL)
+                        translated_line += translate(paragraph, api_key_deepL).replace('"', r'\"')
             f.write(line['key'] + ':0 "' + translated_line + '"\n')
