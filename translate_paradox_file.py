@@ -13,7 +13,7 @@ def get_args():
 def read_paradox_file(file_path):
     res = []
 
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf8') as f:
         lines = f.readlines()
 
     first_line = True
