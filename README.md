@@ -50,5 +50,4 @@ python translate_paradox_file.py "D:\Documents\Commune_de_France" DeepL_key
 ```
 
 ## License
-
-Tasking manager stats is released under the [MIT License](http://www.opensource.org/licenses/MIT).
+DeepL Paradox is released under the [MIT License](http://www.opensource.org/licenses/MIT).
