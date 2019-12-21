@@ -31,7 +31,11 @@ def read_paradox_file(file_path):
             continue
         splitted = uncommented.split(':')
         key = splitted[0]
-        text = splitted[1][2:]
+        text = splitted[1]
+        if text[0].isdigit():
+            text = text[2:]
+        else:
+            text = text[1:]
         if len(splitted) > 2:
             for i in range(2, len(splitted)):
                 text += ':' + splitted[i]
@@ -39,6 +43,7 @@ def read_paradox_file(file_path):
         end = text.rfind('"')
         if start > end:
             print('Incorrect localisation text (ex: missing double quote at the end)')
+            print(line)
             continue
         text = text[start:end]
         res.append({'key': key, 'text':text})
